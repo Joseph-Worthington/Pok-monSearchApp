@@ -1,0 +1,45 @@
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #f1f1f1;
+    font-size: 18px;
+}
+
+main .output{
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    background-color: white;
+    padding: 1rem;
+    margin: 2rem auto;
+    border-radius: 30px;
+    min-width: 300px;
+    width: fit-content;
+}
+
+.output.pokemon-card{
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+    border-radius: 30px;
+    background-color: #f1f1f1;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin: 1rem;
+    display: none;
+}
+.output.pokemon-card.fade-in{
+    display: flex;
+    animation: fade-in 3s;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+  }

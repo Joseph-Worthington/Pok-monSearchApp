@@ -1,4 +1,4 @@
-const pokemonProxyUrl = 'https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/';
+const pokemonProxyUrl = 'https://pokeapi.co/api/v2/pokemon/';
 const searchPokemon = document.getElementById('search-button');
 const pokemonName = document.getElementById('pokemon-name');
 const pokemonID = document.getElementById('pokemon-id');
@@ -12,6 +12,7 @@ const pokemonSpecialAttack = document.getElementById('special-attack');
 const pokemonSpecialDefense = document.getElementById('special-defense');
 const pokemonSpeed = document.getElementById('speed');
 const pokemonImg = document.getElementById('sprite-container');
+const pokemonCard = document.querySelector('.pokemon-card');
 
 const fetchPokemon = async (input) => {
   let pokemonRequestURL = pokemonProxyUrl + input;
@@ -19,6 +20,7 @@ const fetchPokemon = async (input) => {
     const res = await fetch(pokemonRequestURL);
     const data = await res.json();
     if(data){
+      pokemonCard.classList.add('fade-in')
       showLatestPokemon(data)
     }
   } catch (err) {
@@ -97,7 +99,8 @@ const showLatestPokemon = (data) => {
 }
 
 searchPokemon.addEventListener('click', e => {
-  e.preventDefault
+  e.preventDefault()
+  pokemonCard.classList.remove('fade-in')
   let pokemonInputed = document.getElementById("search-input").value;
   pokemonInputed = sanatiseSearch(pokemonInputed);
   fetchPokemon(pokemonInputed)
