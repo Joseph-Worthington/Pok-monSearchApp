@@ -17,7 +17,6 @@ main .output{
     border-radius: 30px;
     min-width: 300px;
     min-height: 800px;
-    overflow: hidden;
 }
 
 .output.pokemon-card{
@@ -34,6 +33,7 @@ main .output{
 }
 .pokemon-card .pokedex-center{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 10px;
@@ -41,6 +41,16 @@ main .output{
     height: 100%;
     background: #f1f1f1;
     margin: 0 auto;
+}
+
+.pokedex-center .pokedex-screen{
+    width: 100%;
+    height: 200px;
+    background: #f1f1f1;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .pokedex-center tbody th{
