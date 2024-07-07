@@ -18,13 +18,20 @@ const fetchPokemon = async (input) => {
   let pokemonRequestURL = pokemonProxyUrl + input;
   try {
     const res = await fetch(pokemonRequestURL);
-    const data = await res.json();
-    if(data){
-      pokemonCard.classList.add('fade-in')
-      showLatestPokemon(data)
+    if (res.ok) { // Check if response is successful
+      const data = await res.json();
+      if (data) { // Check if data is not null or meets your criteria
+        pokemonCard.classList.add('fade-in');
+        showLatestPokemon(data);
+        animatePokedex();
+      } else {
+        alert('Pokémon not Found');
+      }
+    } else {
+      alert('Pokémon not Found');
     }
   } catch (err) {
-    alert('Pokémon not Found')
+    alert('Pokémon not Found');
   }
 };
 
@@ -96,6 +103,21 @@ const showLatestPokemon = (data) => {
   pokemonTypes.innerHTML = pokemonTypesHTML(types)
   pokemonSetStats(stats)
   pokemonImg.innerHTML = `<img id="sprite" src="${sprites.front_default}">`
+}
+
+const animatePokedex = () => {
+  const pokedex = document.querySelectorAll('.pokedex-sides')
+  const pokedexCircle = document.querySelector('.pokedex-circle')
+  pokedex.forEach(side => {
+    side.classList.add('animate-pokedex')
+    setTimeout(() => {
+      side.classList.remove('animate-pokedex')
+    }, 5000)
+  })
+  pokedexCircle.classList.add('animate-pokedex')
+  setTimeout(() => {
+    pokedexCircle.classList.remove('animate-pokedex')
+  }, 5000)
 }
 
 searchPokemon.addEventListener('click', e => {

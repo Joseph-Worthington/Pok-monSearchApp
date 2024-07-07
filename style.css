@@ -12,27 +12,149 @@ main .output{
     font-size: 1rem;
     font-weight: bold;
     color: #333;
-    background-color: white;
-    padding: 1rem;
+    padding: 0;
     margin: 2rem auto;
     border-radius: 30px;
     min-width: 300px;
-    width: fit-content;
+    min-height: 800px;
+    overflow: hidden;
 }
 
 .output.pokemon-card{
+    display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 1rem;
     border-radius: 30px;
-    background-color: #f1f1f1;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    margin: 1rem;
-    display: none;
+    position: relative;
+    min-width: 400px;
 }
 .output.pokemon-card.fade-in{
     display: flex;
     animation: fade-in 3s;
+}
+.pokemon-card .pokedex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    max-width: 75%;
+    height: 100%;
+    background: #f1f1f1;
+    margin: 0 auto;
+}
+
+.pokedex-center tbody th{
+    text-align: left;
+    padding: 10px 0;
+    font-size: 1.2rem;
+}
+
+.pokedex-sides{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    height: 250px;
+    background: red;
+    position: absolute;
+}
+
+.pokedex-sides.pokedex-top{
+    top: 0;
+    border-radius: 20px 20px 0 0;
+}
+
+.pokedex-sides.pokedex-bottom{
+    bottom: 0;
+    border-radius: 0 0 20px 20px;
+}
+
+.pokedex-top.animate-pokedex{
+    animation: pokedex-slide-down 5s;
+}
+
+.pokedex-bottom.animate-pokedex{
+    animation: pokedex-slide-up 5s;
+}
+
+.pokedex-circle{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #f1f1f1;
+    position: absolute;
+    z-index: 1;
+    border: 10px solid black;
+    bottom: -30px;
+}
+.pokedex-circle.animate-pokedex{
+    animation: pokedex-spin-circle 5s;
+}
+
+.pokedex-line{
+    width: 100%;
+    height: 5px;
+    background: black;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+/* 
+    Keyframes
+*/
+
+@keyframes pokedex-spin-circle{
+    0%{
+        transform: rotate(0deg);
+    }
+    30%{
+        transform: rotate(0);
+    }
+    40%{
+        transform: rotate(90deg);
+    }
+    60%{
+        transform: rotate(90deg);
+    }
+    70%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes pokedex-slide-down {
+    0% {
+        top: 0%;
+    }
+    30% {
+        top: 19%;
+    }
+    70% {
+        top: 19%;
+    }
+    100% {
+        top: 0%;
+    }
+}
+
+@keyframes pokedex-slide-up {
+    0% {
+        bottom: 0%;
+    }
+    30% {
+        bottom: 19%;
+    }
+    70% {
+        bottom: 19%;
+    }
+    100% {
+        bottom: 0%;
+    }
 }
 
 @keyframes fade-in {

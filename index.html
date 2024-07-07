@@ -10,56 +10,67 @@
     <main>
       <h1>Pokémon Search App</h1>
       <div class="container">
-        <form role="search" id="search-form" data-dashlane-rid="0beae418434ad6fc" data-form-type="">
-          <label for="search-input">Search for Pokémon Name or ID:</label>
-          <input type="text" name="pokemon" id="search-input" required="">
-          <button id="search-button">Search</button>
-        </form>
         <div class="output pokemon-card">
-          <div class="top-container">
-            <div class="name-and-id">
-              <span id="pokemon-name"></span>
-              <span id="pokemon-id"></span>
+          <div class="pokedex-sides pokedex-top">
+            <div class="pokedex-circle">
+              <div class="pokedex-line"></div>
             </div>
-            <div class="size">
-              <span id="weight"></span>
-              <span id="height"></span>
+          </div>
+          <div class="pokedex-center">
+            <div class="pokedex-search">
+              <div class="search-container">
+                <form role="search" id="search-form" data-dashlane-rid="0beae418434ad6fc" data-form-type="">
+                  <input type="text" name="pokemon" id="search-input" required="" placeholder="Search Pokemon">
+                  <button id="search-button">Search</button>
+                </form>
+              </div>
+            <div id="error-message" class="error-message"></div>
+            <div class="top-container">
+              <div class="name-and-id">
+                <span id="pokemon-name"></span>
+                <span id="pokemon-id"></span>
+              </div>
+              <div class="size">
+                <span id="weight"></span>
+                <span id="height"></span>
+              </div>
+              <div id="sprite-container" class="sprite-container"></div>
+              <div id="types"></div>
             </div>
-            <div id="sprite-container" class="sprite-container"></div>
-            <div id="types"></div>
-          </div>
-          <div class="bottom-container">
-            <table>
-              <tbody><tr>
-                <th>Base</th>
-                <th>Stats</th>
-              </tr>
-              <tr>
-                <td>HP:</td>
-                <td id="hp"></td>
-              </tr>
-              <tr>
-                <td>Attack:</td>
-                <td id="attack"></td>
-              </tr>
-              <tr>
-                <td>Defense:</td>
-                <td id="defense"></td>
-              </tr>
-              <tr>
-                <td>Sp. Attack:</td>
-                <td id="special-attack"></td>
-              </tr>
-              <tr>
-                <td>Sp. Defense:</td>
-                <td id="special-defense"></td>
-              </tr>
-              <tr>
-                <td>Speed:</td>
-                <td id="speed" class="speed"></td>
-              </tr>
-            </tbody></table>
-          </div>
+            <div class="bottom-container">
+              <table>
+                <tbody><tr>
+                  <th>Base</th>
+                  <th>Stats</th>
+                </tr>
+                <tr>
+                  <td>HP:</td>
+                  <td id="hp"></td>
+                </tr>
+                <tr>
+                  <td>Attack:</td>
+                  <td id="attack"></td>
+                </tr>
+                <tr>
+                  <td>Defense:</td>
+                  <td id="defense"></td>
+                </tr>
+                <tr>
+                  <td>Sp. Attack:</td>
+                  <td id="special-attack"></td>
+                </tr>
+                <tr>
+                  <td>Sp. Defense:</td>
+                  <td id="special-defense"></td>
+                </tr>
+                <tr>
+                  <td>Speed:</td>
+                  <td id="speed" class="speed"></td>
+                </tr>
+              </tbody></table>
+            </div>
+          </div>  
+        <div class="pokedex-sides pokedex-bottom"></div>
         </div>
       </div>
       <script src="./script.js"></script>
