@@ -15,7 +15,7 @@ main .output{
     margin: 2rem auto;
     border-radius: 30px;
     min-width: 300px;
-    min-height: 800px;
+    min-height: 850px;
 }
 
 .output.pokemon-card{
@@ -67,6 +67,7 @@ main .output{
     height: 250px;
     background: red;
     position: absolute;
+    border: 10px solid black;
 }
 
 .pokedex-sides.pokedex-top{
@@ -96,7 +97,7 @@ main .output{
     position: absolute;
     z-index: 1;
     border: 10px solid black;
-    bottom: -30px;
+    bottom: -40px;
 }
 .pokedex-circle.animate-pokedex{
     animation: pokedex-spin-circle 5s;

@@ -1,16 +1,17 @@
+import { fetchPokemon } from './pokemonApi.js';
+import { showLatestPokemon, animatePokedex } from './ui.js';
+import { sanatiseSearch } from './utils.js';
+
 const searchPokemon = document.getElementById('search-button');
-const pokemonCard = document.querySelector('.pokemon-card');
-
-import { fetchPokemon, sanatiseSearch } from './api.js';
-
-
 
 searchPokemon.addEventListener('click', e => {
-    e.preventDefault()
-    pokemonCard.classList.remove('fade-in')
-    let pokemonInputed = document.getElementById("search-input").value;
-    console.log(pokemonInputed);
-    pokemonInputed = sanatiseSearch(pokemonInputed);
-    console.log(pokemonInputed);
-    fetchPokemon(pokemonInputed)
-  })
+  e.preventDefault();
+  let pokemonInputed = document.getElementById("search-input").value;
+  pokemonInputed = sanatiseSearch(pokemonInputed);
+  fetchPokemon(pokemonInputed).then(data => {
+    if (data) {
+      showLatestPokemon(data);
+      animatePokedex();
+    }
+  });
+});
