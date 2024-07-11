@@ -3,7 +3,6 @@ main{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 100vh;
     background-color: #f1f1f1;
     font-size: 18px;
 }
@@ -78,6 +77,7 @@ main .output{
 .pokedex-sides.pokedex-bottom{
     bottom: 0;
     border-radius: 0 0 20px 20px;
+    background: white;
 }
 
 .pokedex-top.animate-pokedex{
