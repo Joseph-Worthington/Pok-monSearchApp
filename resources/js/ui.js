@@ -10,6 +10,21 @@ const pokemonWeight = document.getElementById('weight');
 const pokemonHeight = document.getElementById('height');
 const pokemonTypes = document.getElementById('types');
 const pokemonImg = document.getElementById('sprite-container');
+const pokemonIcon = document.getElementById('pokemon-icon');
+const pokemonFlash = document.getElementById('pokedex-flash');
+
+
+export const pokemonTypeAddIcon = (types) => {
+  let icon = ''
+  types.map(({type}, index) => {
+    const imgClass = types.length === 1 ? 'img-full' : 'img-half'
+   icon += `<div class="mask ${imgClass} img-${index}"><img class="${imgClass}" src="resources/imgs/type/${type.name}-type.png" alt="${type.name}"></div>`
+  })
+  setTimeout(() => {
+    return icon;
+  }, 25000)
+};
+
 
 export const pokemonTypesHTML = (types) => {
   let typeHTML = ``
@@ -59,6 +74,7 @@ export const showLatestPokemon = (data) => {
   pokemonID.innerHTML = `#${id}`;
   pokemonWeight.innerHTML = `Weight: ${weight}`;
   pokemonTypes.innerHTML = pokemonTypesHTML(types)
+  pokemonIcon.innerHTML = pokemonTypeAddIcon(types)
   pokemonSetStats(stats)
   pokemonImg.innerHTML = `<img id="sprite" src="${sprites.front_default}">`
 };
@@ -66,14 +82,20 @@ export const showLatestPokemon = (data) => {
 export const animatePokedex = () => {
   const pokedex = document.querySelectorAll('.pokedex-sides')
   const pokedexCircle = document.querySelector('.pokedex-circle')
+
   pokedex.forEach(side => {
     side.classList.add('animate-pokedex')
     setTimeout(() => {
       side.classList.remove('animate-pokedex')
     }, 5000)
   })
-  pokedexCircle.classList.add('animate-pokedex')
+
   setTimeout(() => {
-    pokedexCircle.classList.remove('animate-pokedex')
+    pokemonFlash.classList.add('flash')
+    pokemonIcon.innerHTML = ''
+  }, 1400)
+
+  setTimeout(() => {
+    pokemonFlash.classList.remove('flash')
   }, 5000)
 };
