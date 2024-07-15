@@ -18,11 +18,9 @@ export const pokemonTypeAddIcon = (types) => {
   let icon = ''
   types.map(({type}, index) => {
     const imgClass = types.length === 1 ? 'img-full' : 'img-half'
-   icon += `<div class="mask ${imgClass} img-${index}"><img class="${imgClass}" src="resources/imgs/type/${type.name}-type.png" alt="${type.name}"></div>`
+    icon += `<img class="${imgClass} img-${index}" src="resources/imgs/type/${type.name}-type.png" alt="${type.name}">`
   })
-  setTimeout(() => {
-    return icon;
-  }, 25000)
+  return icon;
 };
 
 
@@ -74,7 +72,10 @@ export const showLatestPokemon = (data) => {
   pokemonID.innerHTML = `#${id}`;
   pokemonWeight.innerHTML = `Weight: ${weight}`;
   pokemonTypes.innerHTML = pokemonTypesHTML(types)
-  pokemonIcon.innerHTML = pokemonTypeAddIcon(types)
+  setTimeout(() => {
+    pokemonIcon.innerHTML = pokemonTypeAddIcon(types)
+  }
+  , 2000)
   pokemonSetStats(stats)
   pokemonImg.innerHTML = `<img id="sprite" src="${sprites.front_default}">`
 };
@@ -87,12 +88,11 @@ export const animatePokedex = () => {
     side.classList.add('animate-pokedex')
     setTimeout(() => {
       side.classList.remove('animate-pokedex')
-    }, 5000)
+    }, 7000)
   })
 
   setTimeout(() => {
     pokemonFlash.classList.add('flash')
-    pokemonIcon.innerHTML = ''
   }, 1400)
 
   setTimeout(() => {
