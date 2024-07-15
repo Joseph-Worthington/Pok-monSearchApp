@@ -20,7 +20,7 @@ The Pokemon State Searcher is a web application designed to provide detailed inf
 1. **Search for a Pokemon**: Enter the name or ID of the Pokemon in the search bar.
 2. **View Results**: Press the search button to display the information about the Pokemon.
 
-YOu can try it here https://joseph-worthington.github.io/PokemonSearchApp/
+You can try it here https://joseph-worthington.github.io/PokemonSearchApp/
 
 ## Installation
 
