@@ -10,8 +10,15 @@ searchPokemon.addEventListener('click', e => {
   pokemonInputed = sanatiseSearch(pokemonInputed);
   fetchPokemon(pokemonInputed).then(data => {
     if (data) {
-      showLatestPokemon(data);
       animatePokedex();
+
+      setTimeout(() => {
+        showLatestPokemon(data);
+      }, 1400);
+
     }
   });
 });
+
+
+
