@@ -20,9 +20,11 @@ The Pokemon State Searcher is a web application designed to provide detailed inf
 1. **Search for a Pokemon**: Enter the name or ID of the Pokemon in the search bar.
 2. **View Results**: Press the search button to display the information about the Pokemon.
 
+YOu can try it here https://joseph-worthington.github.io/PokemonSearchApp/
+
 ## Installation
 
-To run the Pokemon State Searcher on your local machine, follow these steps:
+To run the Pokemon Searcher on your local machine, follow these steps:
 
 1. Clone the repository to your local machine.
 2. Open the index.html file in a web browser.
@@ -33,10 +35,6 @@ To run the Pokemon State Searcher on your local machine, follow these steps:
 - CSS
 - JavaScript
 - Pokemon API
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a pull request or open an issue for any improvements or feature requests.
 
 ## License
 
